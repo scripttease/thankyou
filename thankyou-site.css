@@ -1,0 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.background {
+  background: url(finlandlights.jpg);
+  background-repeat: repeat;
+  width: 100%;
+  display: block;
+}
