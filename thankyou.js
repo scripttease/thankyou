@@ -14,7 +14,7 @@ var wordSpace = document.getElementById("word-space");
 function nameDraw() {
   //select random names
   var randomNumName = getRandomInt(0, names.length -1);
-  var randomName = names[RandomNumName];
+  var randomName = names[randomNumName];
 
   // where individual name is placed
   var namePlace = document.createElement("div");
