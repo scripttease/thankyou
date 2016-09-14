@@ -1,3 +1,6 @@
+// Import CSS so it is loaded on the page
+require("./main.css");
+
 // Random Integer Generator
 
 function getRandomInt(min, max) {

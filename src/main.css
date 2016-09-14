@@ -1,26 +1,23 @@
 html {
-  background: url(finlandlights.jpg) no-repeat center center fixed;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  background: url(/public/finlandlights.jpg) no-repeat center bottom fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}
-
-body {
+  overflow: hidden;
 font-family: "Josefin Sans", sans-serif;
 line-height: 1.4;
-  width: 60%;
-  margin: auto;
 }
 
 a {
   text-decoration: none;
   color: #820D98;  
-}
-
-* {
-  margin: 0;
-  padding: 0;
 }
 
 h1, h2 {
