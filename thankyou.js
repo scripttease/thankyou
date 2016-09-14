@@ -8,7 +8,7 @@ function getRandomInt(min, max) {
 var winHeight = window.innerHeight;
 var winWidth = window.innerWidth;
 
-function randomNamesDraw {
+function randomNamesDraw() {
   // space where words appear
   var wordSpace = document.getElementById("word-space");
 
