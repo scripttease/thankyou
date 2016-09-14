@@ -9,7 +9,7 @@ var winHeight = window.innerHeight;
 var winWidth = window.innerWidth;
 
 // space where words appear
-var wordSpace = document.getElementbyId("word-space");
+var wordSpace = document.getElementById("word-space");
 
 function nameDraw() {
   //select random names
