@@ -11,17 +11,15 @@ var winWidth = window.innerWidth;
 function randomNamesDraw() {
   // space where words appear
   var wordSpace = document.getElementById("word-space");
-  var wordSpaceH = window.innerHeight * 0.8;
-  var wordSpaceW = window.innerWidth * 0.8;
-  wordSpace.height = wordSpaceH;
-  wordSpace.width = wordSpaceW;
+  // wordSpace.height = window.innerHeight * 0.8;
+  // wordSpace.width = window.innerWidth * 0.8;
 
   function nameDraw() {
     // random colours and size
-    var r = getRandomInt(40,255);
-    var g = getRandomInt(40,255);
-    var b = getRandomInt(40,255);
-    var s = getRandomInt(5, 30);
+    // var r = getRandomInt(40,255);
+    // var g = getRandomInt(40,255);
+    // var b = getRandomInt(40,255);
+    // var s = Math.random();
 
     //select random names
     var randomNumName = getRandomInt(0, names.length -1);
@@ -31,10 +29,8 @@ function randomNamesDraw() {
     var namePlace = document.createElement("div");
     namePlace.textContent = randomName;
     namePlace.style.position = "absolute";
-    namePlace.style.left = getRandomInt(50, wordSpaceW -50) + "px";
-    namePlace.style.top = getRandomInt(50, wordSpaceH -50) + "px";
-    namePlace.style.color = "rgb(" + r + "," + g + "," + b + ")";
-    namePlace.setAttribute("font-size", s + "px");
+    namePlace.style.left = getRandomInt(50, winWidth -50) + "px";
+    namePlace.style.top = getRandomInt(50, winHeight -50) + "px";
     document.body.appendChild(namePlace);
 
     setTimeout(function() { namePlace.parentNode.removeChild(namePlace); }, 1000);
@@ -47,3 +43,4 @@ function randomNamesDraw() {
 }
 
 randomNamesDraw();
+
