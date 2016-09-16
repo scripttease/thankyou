@@ -1,4 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
 html {
+  /* so that all of these things fill the viewport */
+  /* otherwise they resize the divs as the content changes */
+  height: 100%;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -11,8 +18,14 @@ body {
   -o-background-size: cover;
   background-size: cover;
   overflow: hidden;
-font-family: "Josefin Sans", sans-serif;
-line-height: 1.4;
+  font-family: "Josefin Sans", sans-serif;
+  line-height: 1.4;
+  margin: 0;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  bottom: 10px;
+  left: 10px;
 }
 
 a {
@@ -27,7 +40,7 @@ h1, h2 {
   color: rgba(192, 223, 130, 0.57);
 }
 
-p {
-  padding: 2%;
-  text-align: justify;
+#word-space {
+  width: 100%;
+  overflow: visible;
 }

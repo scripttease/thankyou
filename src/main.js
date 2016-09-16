@@ -7,46 +7,40 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-// size of document window
-var winHeight = window.innerHeight;
-var winWidth = window.innerWidth;
-
-function randomNamesDraw() {
-  // space where words appear
-  var wordSpace = document.getElementById("word-space");
-  var wordSpaceH = window.innerHeight * 0.8;
-  var wordSpaceW = window.innerWidth * 0.8;
-  wordSpace.height = wordSpaceH;
-  wordSpace.width = wordSpaceW;
-
-  function nameDraw() {
-    // random colours and size
-    var r = getRandomInt(40,255);
-    var g = getRandomInt(40,255);
-    var b = getRandomInt(40,255);
-    var s = getRandomInt(5, 30);
-
-    //select random names
-    var randomNumName = getRandomInt(0, names.length -1);
-    var randomName = names[randomNumName];
-
-    // where individual name is placed
-    var namePlace = document.createElement("div");
-    namePlace.textContent = randomName;
-    namePlace.style.position = "absolute";
-    namePlace.style.left = getRandomInt(50, wordSpaceW -50) + "px";
-    namePlace.style.top = getRandomInt(50, wordSpaceH -50) + "px";
-    namePlace.style.color = "rgb(" + r + "," + g + "," + b + ")";
-    namePlace.setAttribute("font-size", s + "px");
-    document.body.appendChild(namePlace);
-
-    setTimeout(function() { namePlace.parentNode.removeChild(namePlace); }, 1000);
-
-    setTimeout(function() { nameDraw(); }, 300);
-  };
-
-  nameDraw();
-
+function randomColor() {
+  // random colours and size
+  var r = getRandomInt(40,255);
+  var g = getRandomInt(40,255);
+  var b = getRandomInt(40,255);
+  return "rgb(" + r + "," + g + "," + b + ")";
 }
 
-randomNamesDraw();
+function randomName() {
+  var randomNumName = getRandomInt(0, names.length -1);
+  return names[randomNumName];
+}
+
+function nameDraw() {
+  // space where words appear
+  var wordSpace = document.getElementById("word-space");
+  wordSpace.height = window.innerHeight;
+  wordSpace.width = window.innerWidth * 0.7;
+
+  // where individual name is placed
+  // TODO make the div position wordspace - divsize!
+  var namePlace = document.createElement("span");
+  namePlace.textContent = randomName();
+  namePlace.style.position = "absolute";
+  namePlace.style.top = getRandomInt(0, wordSpace.height) + "px";
+  namePlace.style.left = getRandomInt(0, wordSpace.width) + "px";
+  namePlace.style.color = randomColor();
+  // var s = getRandomInt(5, 30);
+  // namePlace.style.fontSize = s + "px";
+  wordSpace.appendChild(namePlace);
+
+  setTimeout(function() { namePlace.parentNode.removeChild(namePlace); }, 1000);
+
+  setTimeout(nameDraw, 300);
+};
+
+nameDraw();
